@@ -1,23 +1,9 @@
 :root {
-  --nav-height: 4rem;
-  --color-gray-5: hsl(224, 10%, 23%);
-  --color-gray-2: hsl(224, 6%, 77%);
-  --color-gray-6: hsl(224, 14%, 16%);
+  --color-gray-6: hsl(224, 20%, 94%);
   --color-gray-7: hsl(224, 19%, 97%);
-  --color-black: hsl(224, 10%, 10%);
-  --color-white: hsl(0, 0%, 100%);
-}
-
-:root[data-theme=light], [data-theme=light] ::backdrop {
-  --color-bg-nav: var(--color-gray-7);
-  --color-text: var(--color-gray-5);
-  --color-bg: var(--color-white);
-}
-
-:root[data-theme=dark], [data-theme=dark] ::backdrop {
-  --color-bg-nav: var(--color-gray-6);
-  --color-text: var(--color-gray-2);
-  --color-bg: var(--color-black);
+  --color-yellow: #FFD966;
+  --color-red: #D32F2F;
+  --color-black: #000000;
 }
 
 * {
@@ -26,31 +12,45 @@
 }
 
 body {
-  margin: 0 auto;
-  width: 100%;
-  line-height: 1.5;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: sans-serif;
-  color: var(--color-text);
-  background: var(--color-bg);
+}
+
+.prose {
+  max-width: 100% !important;
 }
 
 header {
-  background-color: var(--color-bg-nav);
-  height: var(--nav-height);
-}
-
-.nav-links a {
-  color: var(--color-text);
-}
-
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+  background: var(--color-yellow);
+  padding: .7rem 1.5rem;
+  border-bottom: 1px solid var(--color-gray-6);
 }
 
 main {
   flex: 1;
+}
+
+footer {
+  text-align: center;
+  background: var(--color-gray-7);
+}
+
+nav a {
+  text-decoration: none !important;
+}
+
+a {
+  text-underline-offset: .2rem;
+  color: var(--color-black);
+}
+
+a:hover {
+  color: var(--color-red);
+}
+
+menu, ol, ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }

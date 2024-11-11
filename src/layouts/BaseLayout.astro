@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+const { pageTitle, hiddenPageTitle } = Astro.props;
 ---
 <html lang="en" data-theme="light">
   <head>
@@ -12,13 +12,13 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <Header />
-    <main>
-      <h1>{pageTitle}</h1>
-      <slot />
-    </main>
-    <Footer />
+  <body class="prose">
+      <Header />
+      <main class="container px-10 md:px-0 mx-auto">
+        {!hiddenPageTitle && <h1 class="mt-8 leading-snug">{pageTitle}</h1>}
+        <slot />
+      </main>
+      <Footer />
     <script>
       import "../scripts/menu.js";
     </script>

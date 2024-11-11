@@ -1,8 +1,10 @@
 ---
+import NavigationItem from "./NavigationItem.astro";
+
 ---
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/blog">Blog</a>
-  <a href="/tags">Tags</a>
-</div>
+<ul class="flex space-x-8">
+  <NavigationItem href="/" text="Home" />
+  <NavigationItem href="/about" text="About" />
+  <NavigationItem href="/blog" text="Blog" />
+  <NavigationItem href="/tags" text="Tags" />
+</ul>
