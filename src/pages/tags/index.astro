@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const allPosts = await Astro.glob('../posts/*.md');
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
-const pageTitle = "Tag Index";
+// const allPosts = await Astro.glob('../posts/*.md');
+// const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const pageTitle = "Danh sách tag";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <div class="tags">
+  <!-- <div class="tags">
     {tags.map((tag) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
-  </div>
+  </div> -->
 </BaseLayout>
 <style>
   a {

@@ -1,8 +1,34 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "Home Page";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog"))
+  .sort(
+    (
+      a: { data: { pubDate: { valueOf: () => any } } },
+      b: { data: { pubDate: { valueOf: () => any } } },
+    ) => {
+      const dateA = a.data.pubDate.valueOf();
+      const dateB = b.data.pubDate.valueOf();
+      return dateB - dateA;
+    },
+  )
+  .slice(0, 10);
 ---
-<BaseLayout pageTitle={pageTitle} hiddenPageTitle=true>
+
+<BaseLayout pageTitle={SITE_TITLE} hiddenPageTitle="true">
   <h2>Bài viết mới nhất</h2>
+  <p>
+    <ul class="latest-posts">
+      {
+        posts.map((post: { slug: any; data: { title: unknown; }; }) => (
+          <li>
+            <a href="/">
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </p>
 </BaseLayout>

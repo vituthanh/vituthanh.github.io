@@ -54,3 +54,12 @@ menu, ol, ul {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+.latest-posts {
+  list-style: disc !important;
+  margin-left: 20px !important;
+}
+
+.latest-posts li {
+  padding-inline-start: 0 !important;
+}
