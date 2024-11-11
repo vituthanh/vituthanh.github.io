@@ -33,7 +33,7 @@ main {
 
 footer {
   text-align: center;
-  background: var(--color-gray-7);
+  background: var(--color-yellow);
 }
 
 nav a {
