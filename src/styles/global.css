@@ -34,10 +34,6 @@ footer {
   background: var(--color-yellow);
 }
 
-nav a {
-  text-decoration: none !important;
-}
-
 a {
   text-underline-offset: .2rem;
   color: var(--color-black);
@@ -47,10 +43,9 @@ a:hover {
   color: var(--color-red);
 }
 
-.nav-list {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.hamburger:hover {
+  color: var(--color-red);
+  cursor: pointer;
 }
 
 .latest-posts {
@@ -87,4 +82,11 @@ pre {
   cursor: pointer;
   border-radius: 5px;
   display: inline-block;
+}
+
+.nav-links {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  list-style: none !important;
+  padding-inline-start: .625em !important;
 }
