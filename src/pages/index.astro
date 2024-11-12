@@ -22,7 +22,7 @@ const posts = (await getCollection("post"))
   <ul class="latest-posts">
     {
       posts.map((post: { slug: any; data: { title: unknown; }; }) => (
-        <PostListItem url={`post/${post.slug}`} title={post.data.title} />
+        <PostListItem url={`/post/${post.slug}`} title={post.data.title} />
       ))
     }
   </ul>
