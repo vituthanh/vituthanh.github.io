@@ -90,3 +90,8 @@ pre {
   list-style: none !important;
   padding-inline-start: .625em !important;
 }
+
+.giscus {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
