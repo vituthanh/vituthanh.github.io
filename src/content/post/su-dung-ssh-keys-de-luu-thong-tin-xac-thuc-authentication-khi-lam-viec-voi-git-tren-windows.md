@@ -15,7 +15,9 @@ Tải và cài đặt Git Bash từ trang chủ của Git [tại đây](https://
 
 Mở Git Bash và chạy lệnh sau để tạo một SSH Key mới:
 
-<pre>ssh-keygen -t rsa -b 4096 -C "youremail@example.com"</pre>
+```
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+```
 
  - Thay [youremail@example.com](mailto:youremail@example.com) bằng email
    mà bạn đã dùng cho tài khoản GitHub, GitLab, hoặc các dịch vụ Git
@@ -29,17 +31,23 @@ Mở Git Bash và chạy lệnh sau để tạo một SSH Key mới:
 
 Để SSH agent quản lý SSH key, khởi động agent bằng lệnh sau:
 
-<pre>eval $(ssh-agent -s)</pre>
+```
+eval $(ssh-agent -s)
+```
 
 Sau đó, thêm SSH key vào agent:
 
-<pre>ssh-add ~/.ssh/id_rsa</pre>
+```
+ssh-add ~/.ssh/id_rsa
+```
 
 ## 4. Sao chép Public Key
 
 Để kết nối với dịch vụ Git (như GitHub hoặc GitLab), bạn cần sao chép SSH public key:
 
-<pre>cat ~/.ssh/id_rsa.pub</pre>
+```
+cat ~/.ssh/id_rsa.pub
+```
 
 Sau đó, sao chép toàn bộ nội dung của key hiển thị ra.
 
@@ -53,6 +61,8 @@ Sau đó, sao chép toàn bộ nội dung của key hiển thị ra.
 
 Đảm bảo Git sẽ sử dụng SSH khi thực hiện các thao tác như clone, pull, hoặc push. Ví dụ, khi bạn clone một repository, thay vì dùng URL HTTPS, hãy dùng URL SSH như sau:
 
-<pre>git clone git@github.com:username/repository.git</pre>
+```
+git clone git@github.com:username/repository.git
+```
 
 Sau khi thực hiện các bước trên, bạn sẽ không cần nhập mật khẩu mỗi lần push, pull hay clone từ các dịch vụ Git nữa, giúp tiết kiệm thời gian và bảo mật tốt hơn.

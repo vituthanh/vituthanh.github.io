@@ -11,7 +11,9 @@ Sử dụng SSH keys là phương pháp bảo mật và tiện lợi hơn để 
 
 Chạy lệnh dưới đây để tạo một SSH key mới:
 
-<pre>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</pre>
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
 
 Trong quá trình tạo, bạn sẽ được yêu cầu nhập đường dẫn lưu key và passphrase (có thể để trống nếu không muốn đặt mật khẩu cho SSH key).
 
@@ -19,14 +21,18 @@ Trong quá trình tạo, bạn sẽ được yêu cầu nhập đường dẫn l
 
 Chạy các lệnh dưới đây để khởi động SSH agent và thêm SSH key vào:
 
-<pre>eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa</pre>
+```
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
 
 ## 3. Thêm SSH Key vào GitHub
 
 Chạy lệnh dưới đây để sao chép nội dung của SSH public key:
 
-<pre>cat ~/.ssh/id_rsa.pub</pre>
+```
+cat ~/.ssh/id_rsa.pub
+```
 
 Truy cập vào GitHub và thêm SSH key:
 
@@ -42,22 +48,30 @@ Truy cập vào GitHub và thêm SSH key:
 
 Chạy lệnh dưới đây để thay đổi URL của remote repository từ HTTPS sang SSH:
 
-<pre>git remote set-url origin git@github.com:username/repository.git</pre>
+```
+git remote set-url origin git@github.com:username/repository.git
+```
 
 ## 5. Xác nhận kết nối SSH
 
 Chạy lệnh dưới đây để kiểm tra kết nối SSH với GitHub:
 
-<pre>ssh -T git@github.com</pre>
+```
+ssh -T git@github.com
+```
 
 Nếu lần đầu tiên kết nối đến GitHub qua SSH sẽ xuất hiện thông báo xác nhận danh tính như bên dưới
 
-<pre>The authenticity of host 'github.com (your_ip)' can't be established.
+```
+The authenticity of host 'github.com (your_ip)' can't be established.
 ECDSA key fingerprint is SHA256:your_key.
-Are you sure you want to continue connecting (yes/no/[fingerprint])?</pre>
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
 
-Điền **yes** để tiếp tục kết nối
+Gõ **yes** để tiếp tục kết nối
 
 Nếu thành công, bạn sẽ nhận được thông báo:
 
-<pre>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</pre>
+```
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```
