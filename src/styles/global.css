@@ -1,6 +1,4 @@
 :root {
-  --color-gray-6: hsl(224, 20%, 94%);
-  --color-gray-7: hsl(224, 19%, 97%);
   --color-yellow: #FFD966;
   --color-red: #D32F2F;
   --color-black: #000000;
@@ -24,7 +22,7 @@ body {
 header {
   background: var(--color-yellow);
   padding: .7rem 1.5rem;
-  border-bottom: 1px solid var(--color-gray-6);
+  border-bottom: 1px solid var(--color-yellow);
 }
 
 main {

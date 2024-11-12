@@ -14,13 +14,12 @@ const { pageTitle, hiddenPageTitle } = Astro.props;
   </head>
   <body class="prose">
       <Header />
-      <main class="container px-10 md:px-0 mx-auto">
+      <main class="container mx-auto">
         {!hiddenPageTitle && <h1 class="mt-8 leading-snug">{pageTitle}</h1>}
         <slot />
       </main>
       <Footer />
     <script>
-      import "../scripts/menu.js";
       import "../scripts/copy-btn.js";
     </script>
   </body>
