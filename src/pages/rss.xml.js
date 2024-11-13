@@ -1,4 +1,5 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 export async function GET(context) {
@@ -13,6 +14,5 @@ export async function GET(context) {
       description: post.data.description,
       link: `/posts/${post.slug}/`,
     })),
-    customData: `<language>en-us</language>`,
   });
 }
