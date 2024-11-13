@@ -95,3 +95,13 @@ pre {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+input:focus {
+  border-color: var(--color-black);
+  box-shadow: 0 0 5px var(--color-yellow);
+}
+
+input {
+  border: 2px solid var(--color-white);
+  outline: none;
+}
