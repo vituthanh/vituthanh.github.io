@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Không tìm thấy trang";
+---
+
+<BaseLayout pageTitle={pageTitle} hiddenPageTitle={true}>
+  <div class="mt-8 leading-snug text-center">
+    <h1>{pageTitle}</h1>
+    <p>Trang bạn đang tìm kiếm không tồn tại.</p>
+    <a href="/">Trở về trang Home</a>
+  </div>
+</BaseLayout>
