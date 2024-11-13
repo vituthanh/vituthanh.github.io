@@ -1,10 +1,11 @@
 ---
 import Navigation from './Navigation.astro';
 import SearchBar from "./SearchBar.astro";
+import { SITE_TITLE } from "../consts";
 ---
 <header>
   <nav class="container mx-auto flex justify-between items-center">
-    <div class="text-2xl font-bold"><a class="no-underline" href="/">Hill Garden</a></div>
+    <div class="text-2xl font-bold"><a class="no-underline" href="/">{SITE_TITLE}</a></div>
     <SearchBar />
     <div class="md:hidden hamburger">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
