@@ -5,16 +5,20 @@ import '../styles/global.css';
 
 interface Props {
   pageTitle: string;
+  description: string;
+  url: URL;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, description, url } = Astro.props;
 ---
 <html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(url, Astro.site).pathname}>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description}>
     <title>{pageTitle}</title>
   </head>
   <body class="prose">
@@ -23,8 +27,5 @@ const { pageTitle } = Astro.props;
         <slot />
       </main>
       <Footer />
-    <script>
-      import "../scripts/copy-btn.js";
-    </script>
   </body>
 </html>

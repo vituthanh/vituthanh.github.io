@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Không tìm thấy trang";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={pageTitle} url={Astro.url}>
   <PageTitle pageTitle={pageTitle} styles="text-center"/>
   <div class="text-center">
     <p>Trang bạn đang tìm kiếm không tồn tại.</p>

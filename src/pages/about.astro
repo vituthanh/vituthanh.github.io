@@ -5,7 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About me";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={pageTitle} url={Astro.url}>
   <PageTitle pageTitle={pageTitle} styles="text-center" />
   <p>
     Tôi là Tống Viết Thanh, sống ở Huế và là một lập trình viên có kinh nghiệm xây dựng các ứng dụng trên nền tảng .NET của Microsoft.

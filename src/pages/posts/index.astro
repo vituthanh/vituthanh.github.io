@@ -8,7 +8,7 @@ const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { value
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={pageTitle} url={Astro.url}>
   <PageTitle pageTitle={pageTitle} />
   <ul class="latest-posts">
     {

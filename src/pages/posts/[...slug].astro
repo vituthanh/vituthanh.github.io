@@ -18,8 +18,12 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout pageTitle={post.data.title}>
+<BaseLayout pageTitle={post.data.title} description={post.data.description} url={Astro.url}>
   <PageTitle pageTitle={post.data.title} />
   <Content />
   <GiscusComment/>
 </BaseLayout>
+
+<script>
+  import "../../scripts/copy-btn.js";
+</script>

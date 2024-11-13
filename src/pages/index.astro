@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import PostListItem from "../components/PostListItem.astro";
 import PageTitle from "../components/PageTitle.astro";
@@ -11,10 +11,10 @@ const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { value
     },
   )
   .slice(0, 10);
-  const pageTitle = "Bài viết mới nhất";
+const pageTitle = "Bài viết mới nhất";
 ---
 
-<BaseLayout pageTitle={SITE_TITLE}>
+<BaseLayout pageTitle={SITE_TITLE} description={SITE_DESCRIPTION} url={Astro.url}>
   <PageTitle pageTitle={pageTitle} />
   <ul class="latest-posts">
     {
