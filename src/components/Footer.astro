@@ -1,6 +1,6 @@
 ---
-import { DOMAIN } from "../consts";
+import { SITE_TITLE } from "../consts";
 ---
 <footer>
-  <p>© 2024 <a class="no-underline" href={`https://${DOMAIN}`}>{DOMAIN}</a>. All rights reserved.</p>
+  <p>© 2024 <a class="no-underline" href={Astro.site}>{SITE_TITLE}</a>. All rights reserved.</p>
 </footer>
