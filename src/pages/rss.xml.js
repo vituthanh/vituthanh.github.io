@@ -1,11 +1,12 @@
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 export async function GET(context) {
   return rss({
-    title: 'Astro Learner | Blog',
-    description: 'My journey learning Astro',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     site: context.site,
-    items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
+    items: await pagesGlobToRssItems(import.meta.glob('../content/posts/**/*.md')),
     customData: `<language>en-us</language>`,
   });
 }
