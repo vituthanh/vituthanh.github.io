@@ -83,7 +83,19 @@ export default {
 };
 </script>
 ```
-
+## Trường hợp TypeScript
+Bạn có thể tạo output TypeScript cho các file .proto khi sử dụng gRPC-Web với protoc. Để làm điều này, bạn cần plugin protoc-gen-ts từ gói ts-protoc-gen, giúp tạo mã TypeScript thay vì JavaScript thuần.
+### Cài đặt ts-protoc-gen
+Trước tiên, bạn cần cài đặt ts-protoc-gen
+```
+npm install -D ts-protoc-gen
+```
+### Sử dụng protoc để tạo file TypeScript
+Sau khi cài đặt, bạn có thể sử dụng protoc để tạo file TypeScript bằng cách đặt đường dẫn tới ts-protoc-gen trong lệnh:
+```
+protoc --proto_path=GrpcGreeter/GrpcGreeter/Protos --js_out=import_style=commonjs,binary:greeter-client/src/ --grpc-web_out=import_style=typescript,mode=grpcwebtext:greeter-client/src/ --plugin=protoc-gen-ts=greeter-client/node_modules/.bin/protoc-gen-ts greet.proto
+```
+Sau khi chạy lệnh này, bạn sẽ thấy các file TypeScript được tạo trong thư mục greeter-client/src/, với các định nghĩa và kiểu dữ liệu tương ứng từ file .proto.
 ## Ghi chú bổ sung
 - **CORS và gRPC-Web:** Nếu bạn gặp lỗi CORS, hãy đảm bảo server của bạn đã được cấu hình để chấp nhận các yêu cầu từ domain của client.
 - **Cấu hình HTTPS:** Đảm bảo server đang chạy với HTTPS nếu sử dụng https://localhost:7255 trong Vue.js.
