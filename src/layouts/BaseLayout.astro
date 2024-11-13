@@ -2,6 +2,12 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+interface Props {
+  pageTitle: string;
+  hiddenPageTitle?: boolean;
+}
+
 const { pageTitle, hiddenPageTitle } = Astro.props;
 ---
 <html lang="en" data-theme="light">

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE } from "../consts";
 import { getCollection } from "astro:content";
 import PostListItem from "../components/PostListItem.astro";
 const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { valueOf: () => any; }; }; }, b: { data: { pubDate: { valueOf: () => any; }; }; }) => {
@@ -12,11 +12,11 @@ const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { value
   .slice(0, 10);
 ---
 
-<BaseLayout pageTitle={SITE_TITLE} hiddenPageTitle="true">
+<BaseLayout pageTitle={SITE_TITLE} hiddenPageTitle={true}>
   <h2>Bài viết mới nhất</h2>
   <ul class="latest-posts">
     {
-      posts.map((post: { slug: any; data: { title: unknown; }; }) => (
+      posts.map((post: { slug: string; data: { title: string; }; }) => (
         <PostListItem url={`/posts/${post.slug}`} title={post.data.title} />
       ))
     }
