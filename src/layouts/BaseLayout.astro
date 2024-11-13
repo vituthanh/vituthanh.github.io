@@ -5,10 +5,9 @@ import '../styles/global.css';
 
 interface Props {
   pageTitle: string;
-  hiddenPageTitle?: boolean;
 }
 
-const { pageTitle, hiddenPageTitle } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 <html lang="en" data-theme="light">
   <head>
@@ -21,7 +20,6 @@ const { pageTitle, hiddenPageTitle } = Astro.props;
   <body class="prose">
       <Header />
       <main class="container mx-auto">
-        {!hiddenPageTitle && <h1 class="mt-8 leading-snug">{pageTitle}</h1>}
         <slot />
       </main>
       <Footer />

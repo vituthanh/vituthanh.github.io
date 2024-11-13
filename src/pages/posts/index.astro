@@ -2,12 +2,14 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostListItem from "../../components/PostListItem.astro";
+import PageTitle from "../../components/PageTitle.astro";
 const pageTitle = "Danh sách bài viết";
 const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { valueOf: () => any; }; }; }, b: { data: { pubDate: { valueOf: () => any; }; }; }) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 ---
 <BaseLayout pageTitle={pageTitle}>
+  <PageTitle pageTitle={pageTitle} />
   <ul class="latest-posts">
     {
       posts.map((post: { slug: string; data: { title: string; }; }) => (

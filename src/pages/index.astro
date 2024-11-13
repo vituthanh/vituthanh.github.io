@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_TITLE } from "../consts";
 import { getCollection } from "astro:content";
 import PostListItem from "../components/PostListItem.astro";
+import PageTitle from "../components/PageTitle.astro";
 const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { valueOf: () => any; }; }; }, b: { data: { pubDate: { valueOf: () => any; }; }; }) => {
       const dateA = a.data.pubDate.valueOf();
       const dateB = b.data.pubDate.valueOf();
@@ -10,10 +11,11 @@ const posts = (await getCollection("posts")).sort((a: { data: { pubDate: { value
     },
   )
   .slice(0, 10);
+  const pageTitle = "Bài viết mới nhất";
 ---
 
-<BaseLayout pageTitle={SITE_TITLE} hiddenPageTitle={true}>
-  <h2>Bài viết mới nhất</h2>
+<BaseLayout pageTitle={SITE_TITLE}>
+  <PageTitle pageTitle={pageTitle} />
   <ul class="latest-posts">
     {
       posts.map((post: { slug: string; data: { title: string; }; }) => (

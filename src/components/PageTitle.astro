@@ -1,0 +1,8 @@
+---
+interface Props {
+  pageTitle: string;
+  styles?: string;
+}
+const {pageTitle, styles} = Astro.props;
+---
+<h1 class=`mt-8 leading-snug ${styles}`>{pageTitle}</h1>
